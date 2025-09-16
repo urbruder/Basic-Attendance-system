@@ -1,13 +1,10 @@
-// backend/index.js
-
-// Use 'import' instead of 'require'
 import express from 'express';
+import serverless from 'serverless-http'; // ← import serverless-http
 import cors from 'cors';
-import config from '../config/config.js';         // Note the '.js' extension
-import connectDB from '../config/db.js';           // Note the '.js' extension
-import mainRouter from '../routes/index.js';       // Note the '.js' extension
+import connectDB from '../config/db.js';
+import mainRouter from '../routes/index.js';
 
-// Connect to Database
+// Connect to DB
 connectDB();
 
 const app = express();
@@ -16,10 +13,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Main API Router
+// Routes
 app.use('/api', mainRouter);
 
-// Start the server
-app.listen(config.port, () => {
-  console.log(`Backend server running on http://localhost:${config.port}`);
-});
+// ---------------------------
+// Remove app.listen()
+// ---------------------------
+// app.listen(config.port, () => {
+//   console.log(`Backend server running on http://localhost:${config.port}`);
+// });
+
+// Export serverless handler
+export const handler = serverless(app);
