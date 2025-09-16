@@ -3,9 +3,9 @@
 // Use 'import' instead of 'require'
 import express from 'express';
 import cors from 'cors';
-import config from './config/config.js';         // Note the '.js' extension
-import connectDB from './config/db.js';           // Note the '.js' extension
-import mainRouter from './routes/index.js';       // Note the '.js' extension
+import config from '../config/config.js';         // Note the '.js' extension
+import connectDB from '../config/db.js';           // Note the '.js' extension
+import mainRouter from '../routes/index.js';       // Note the '.js' extension
 
 // Connect to Database
 connectDB();
