@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://basic-attendance-system-backend.vercel.app',
+  baseURL: 'https://basic-attendance-system-backend.vercel.app/api',
 });
 
 api.interceptors.request.use((config) => {
