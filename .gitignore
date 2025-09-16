@@ -1,0 +1,11 @@
+# Node modules in both frontend & backend
+backend/node_modules/
+frontend/node_modules/
+
+# Environment files
+backend/.env
+frontend/.env
+
+# OS + editor junk
+.DS_Store
+*.log
